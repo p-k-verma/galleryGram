@@ -1,8 +1,12 @@
 <template>
   <div id="app">
-    <div class="full_data" v-for="(deatils,index) in product_details" :key="index">
-      <h1>{{deatils.user.bio}}</h1>
-      <img :src="`${deatils.links.download}`" alt="" srcset="" class="img_details">
+    <div class="top">
+      <div class="gallery" v-for="(deatils,index) in product_details" :key="index">
+          <div>
+            <img src="./assets/heart-solid.svg" alt="" srcset="" class="heart">
+          </div>
+        <img :src="`${deatils.urls.regular}`"  alt="" srcset="" class="gallery_image">
+      </div>
     </div>
   </div>
 </template>
