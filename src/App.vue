@@ -7,6 +7,9 @@
           </div> -->
         <img :src="`${deatils.urls.regular}`"  alt="" srcset="" class="gallery_image">
       </div>
+      <!-- <div ref="productLoader">
+        <img src="@/assets/loader.gif" alt="loader">
+      </div> -->
     </div>
   </div>
 </template>
@@ -26,9 +29,7 @@ export default {
     }
   },
   mounted(){
-    let a = [1,2,3,4,5,6]
-    console.log('an array',a)
-    console.log('an destructed array',...a);
+
   }
   ,
   created(){
@@ -42,19 +43,18 @@ export default {
       .get(`https://api.unsplash.com/photos/?page=${this.page}&client_id=K__Jo88ggfNZCK2OZIlCs805vo2wa43IBUfcrP5Kd1U`)
       .then((response) => {
         this.product_details.push(...response.data)
-        console.log(this.product_details,"product details");
       })
       .catch((error) => {
         console.log(error);
       })
     },
     infinite_load(){
-      if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight -1000) {
         console.log("hiiiii");
         this.page++;
         this.apicall();
       }
-    }
+    },
   },
 }
 </script>
