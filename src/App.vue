@@ -2,9 +2,9 @@
   <div id="app">
     <div class="top">
       <div class="gallery" v-for="(deatils,index) in product_details" :key="index">
-          <div>
+          <!-- <div>
             <img src="./assets/heart-solid.svg" alt="" srcset="" class="heart">
-          </div>
+          </div> -->
         <img :src="`${deatils.urls.regular}`"  alt="" srcset="" class="gallery_image">
       </div>
     </div>
